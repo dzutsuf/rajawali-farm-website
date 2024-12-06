@@ -79,17 +79,20 @@
   font-size: 4rem;
   font-weight: bold;
   margin-bottom: 15px;
+  text-align: center;
 }
 
 .welcome-text p {
   font-size: 2rem;
   margin-bottom: 25px;
+  text-align: center;
 }
 
 .button1 {
   display: flex;
   gap: 20px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* CTA Button Styling */
@@ -106,5 +109,44 @@
 
 .cta-button:hover {
   background-color: #e64a19;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .logo {
+    width: 70%;
+  }
+
+  .welcome-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .welcome-text p {
+    font-size: 1.5rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 10px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 90%;
+  }
+
+  .welcome-text h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-text p {
+    font-size: 1.2rem;
+  }
+
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 8px 20px;
+  }
 }
 </style>

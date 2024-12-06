@@ -1,5 +1,20 @@
 <script>
 import "font-awesome/css/font-awesome.min.css";
+
+export default {
+  mounted() {
+    const footer = document.querySelector(".footer");
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          footer.classList.add("animate-footer");
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(footer);
+  },
+};
 </script>
 
 <template>
@@ -17,14 +32,12 @@ import "font-awesome/css/font-awesome.min.css";
             Jika Anda memiliki pertanyaan atau membutuhkan informasi lebih
             lanjut tentang Rajawali Farm, jangan ragu untuk menghubungi kami.
           </p>
-          <!-- Ikon Instagram -->
           <div class="icon">
             <a
               href="https://www.instagram.com/rajawalifarm/"
               class="instagram-icon"
             >
               <i class="fab fa-instagram"></i>
-              <!-- Ikon Instagram Font Awesome -->
             </a>
           </div>
         </div>
@@ -33,15 +46,15 @@ import "font-awesome/css/font-awesome.min.css";
     <div class="div2">
       <h1 class="dh2">Informasi</h1>
       <div class="nophone">
-        <div class="icon"><i class="fa fa-phone"></i></div>
+        <div class="icon2"><i class="fa fa-phone"></i></div>
         <h1 class="number">+62 857-0740-0991</h1>
       </div>
       <div class="nophone">
-        <div class="icon"><i class="fa fa-envelope"></i></div>
+        <div class="icon2"><i class="fa fa-envelope"></i></div>
         <h1 class="number">+62 857-0740-0991</h1>
       </div>
       <div class="nophone">
-        <div class="icon"><i class="fa fa-map-marker"></i></div>
+        <div class="icon2"><i class="fa fa-map-marker"></i></div>
         <h1 class="number">+62 857-0740-0991</h1>
       </div>
     </div>
@@ -52,15 +65,17 @@ import "font-awesome/css/font-awesome.min.css";
 .footer {
   background-color: #a06729;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Membagi menjadi 2 kolom sama besar */
-  gap: 20px; /* Jarak antara kolom */
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.div1 {
-  gap: 10px; /* Jarak antara gambar dan teks */
-  margin-left: 50px;
-  margin-top: 25px;
-  margin-bottom: 25px;
+.div1,
+.div2 {
+  margin: 20px;
 }
 
 .imgh1 {
@@ -78,13 +93,9 @@ import "font-awesome/css/font-awesome.min.css";
 }
 
 .dh1 {
-  margin: 0; /* Menghilangkan margin default pada h1 */
+  margin: 0;
   font-size: 6vh;
   color: white;
-}
-
-.paragraph-container {
-  margin-top: 10px; /* Memberikan sedikit jarak antara h1 dan paragraf */
 }
 
 .d1p1 {
@@ -92,43 +103,68 @@ import "font-awesome/css/font-awesome.min.css";
   font-size: 1rem;
 }
 
-/* Gaya untuk ikon Instagram */
 .instagram-icon {
   color: white;
   font-size: 3rem;
   margin-top: 10px;
-  text-decoration: none; /* Menghilangkan underline pada link */
+  text-decoration: none;
 }
 
 .instagram-icon:hover {
-  color: #d84b4b; /* Mengubah warna saat hover */
-}
-
-.div2 {
-  gap: 10px; /* Jarak antara gambar dan teks */
-  margin-left: 50px;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  color: #d84b4b;
 }
 
 .dh2 {
-  margin-top: 7px; /* Menghilangkan margin default pada h1 */
+  margin-top: 7px;
   font-size: 4vh;
   color: white;
 }
 
 .nophone {
-  gap: 5px;
   display: flex;
   align-items: center;
 }
 
-.icon {
+.icon2 {
   color: white;
   font-size: 2rem;
+  min-width: 40px;
+  text-align: center;
 }
+
 .number {
   color: white;
   font-size: large;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .imgh1 {
+    justify-content: center;
+  }
+
+  .dh1,
+  .dh2 {
+    font-size: 4vh;
+  }
+
+  .nophone {
+    justify-content: center;
+  }
+
+  .number {
+    margin-left: 0;
+  }
+}
+
+/* Animasi muncul dari bawah */
+.animate-footer {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
