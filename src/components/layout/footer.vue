@@ -47,15 +47,18 @@ export default {
       <h1 class="dh2">Informasi</h1>
       <div class="nophone">
         <div class="icon2"><i class="fa fa-phone"></i></div>
-        <h1 class="number">+62 857-0740-0991</h1>
+        <h1 class="number">+62 0822-1442-6665</h1>
       </div>
       <div class="nophone">
         <div class="icon2"><i class="fa fa-envelope"></i></div>
-        <h1 class="number">+62 857-0740-0991</h1>
+        <h1 class="number">ATU110714@gmail.com</h1>
       </div>
       <div class="nophone">
         <div class="icon2"><i class="fa fa-map-marker"></i></div>
-        <h1 class="number">+62 857-0740-0991</h1>
+        <h1 class="number">
+          Kelinci road, Raharja, Kec. Tanjungsari, Kabupaten Sumedang, Jawa
+          Barat 45362
+        </h1>
       </div>
     </div>
   </div>
@@ -136,6 +139,8 @@ export default {
   color: white;
   font-size: large;
   margin-left: 10px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 600;
 }
 
 @media screen and (max-width: 768px) {

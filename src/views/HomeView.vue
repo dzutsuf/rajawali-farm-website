@@ -1,42 +1,69 @@
-<script setup lang="ts">
-import TheWelcome from "../components/TheWelcome.vue";
-import navigate from "../components/layout/navbar.vue";
-import welcome from "../components/layout/welcome.vue";
-import greet from "../components/layout/greeting.vue";
-import addImage from "../components/atom/image.vue";
-import production from "../components/layout/production.vue";
-import reason from "../components/layout/reason.vue";
-import end from "../components/layout/footer.vue";
+<script setup>
+import Welcome from "../components/layout/welcome.vue";
+import Greet from "../components/layout/greeting.vue";
+import Tentang from "../components/layout/tentangKami.vue";
+import Production from "../components/layout/production.vue";
+import Reason from "../components/layout/reason.vue";
+import End from "../components/layout/footer.vue";
+import DataP from "../components/layout/dataPenjualan.vue";
+import Prioritas from "@/components/layout/prioritas.vue";
+import Mitra from "@/components/layout/mitra.vue";
 </script>
 
 <template>
-  <!-- Main Content with Background Image -->
-  <main class="margin">
+  <main class="disable-scroll">
+    <!-- Section Welcome -->
     <div class="background">
-      <welcome />
-    </div>
-    <div>
-      <greet />
-    </div>
-    <!-- <div class="flex">
-      <addImage />
-    </div> -->
-
-    <div>
-      <production />
+      <Welcome />
     </div>
 
-    <div>
-      <reason />
+    <!-- Section Greeting -->
+    <divdiv id="greet" class="tentang">
+      <Greet />
+    </divdiv>
+
+    <!-- Section Tentang Kami -->
+    <div id="tentangKami" class="tentang">
+      <Tentang />
     </div>
+
     <div>
-      <end />
+      <DataP />
+    </div>
+
+    <!-- Section Production -->
+    <div>
+      <Production />
+    </div>
+
+    <!-- Section Reason -->
+    <div>
+      <Reason />
+    </div>
+
+    <div>
+      <Prioritas />
+    </div>
+
+    <div>
+      <Mitra />
+    </div>
+
+    <!-- Section Footer -->
+    <div>
+      <End />
     </div>
   </main>
 </template>
 
 <style scoped>
-/* Main Background Styling */
+/* Nonaktifkan scroll */
+.disable-scroll {
+  overflow: hidden; /* Hilangkan scroll */
+  height: 100vh; /* Batasi konten dalam satu layar */
+}
+
+/* Styling untuk latar belakang */
 .background {
   background-image: url("@/assets/bghomepage.png");
   background-size: cover;
@@ -50,17 +77,5 @@ import end from "../components/layout/footer.vue";
   text-align: center;
   color: white;
   padding: 0 20px;
-}
-
-/* --- Introduction Section --- */
-.introduction {
-  display: flex;
-  justify-content: center; /* Memastikan konten berada di tengah secara horizontal */
-  align-items: center;
-  width: 100%; /* Pastikan lebar section memenuhi 100% layar */
-  height: 100%;
-  background-size: cover; /* Mengisi seluruh tinggi layar */
-  background-color: #ffeda3; /* Memberikan background warna sesuai yang diinginkan */
-  text-align: center;
 }
 </style>

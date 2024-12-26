@@ -36,40 +36,45 @@ export default {
 <template>
   <div class="produksi">
     <h1 class="h1p">Bagaimana Kami Memproduksi Ayam dan Telur?</h1>
-
-    <!-- Section 1 -->
     <div class="content-wrapper slide-left" :ref="setRefs">
-      <img src="@/assets/produksi.png" alt="image1" class="produksi-image" />
-      <p class="produksi-paragraph">
-        Pakan ayam peternakan terdiri dari pelet yang mengandung karbohidrat,
-        protein, vitamin, dan mineral. Selain pakan utama, suplemen seperti
-        vitamin, mineral, probiotik, dan aditif pakan ditambahkan untuk
-        mendukung kesehatan, pertumbuhan, dan produksi ayam. Air bersih juga
-        harus tersedia setiap saat untuk mendukung pencernaan dan metabolisme
-        ayam.
-      </p>
+      <div class="content1">
+        <img src="@/assets/produksi.png" alt="image1" class="produksi-image" />
+        <p class="produksi-paragraph">
+          Pakan ayam peternakan terdiri dari pelet yang mengandung karbohidrat,
+          protein, vitamin, dan mineral. Selain pakan utama, suplemen seperti
+          vitamin, mineral, probiotik, dan aditif pakan ditambahkan untuk
+          mendukung kesehatan, pertumbuhan, dan produksi ayam. Air bersih juga
+          harus tersedia setiap saat untuk mendukung pencernaan dan metabolisme
+          ayam.
+        </p>
+      </div>
       <img src="@/assets/Ayam2.png" alt="image2" class="produksi-image" />
     </div>
-
-    <!-- Section 2 -->
     <div class="content-wrapper slide-right" :ref="setRefs">
       <img src="@/assets/produksi3.png" alt="image1" class="produksi-image2" />
-      <p class="produksi-paragraph2">
-        Setelah telur dihasilkan, telur akan dipanen dengan hati-hati untuk
-        menjaga kualitasnya. Telur kemudian dibersihkan, disortir berdasarkan
-        ukuran dan kualitas, dan kemudian dikemas. Setelah itu, telur siap
-        didistribusikan ke pasar atau konsumen melalui jaringan distribusi yang
-        sudah ada, seperti pengecer atau perusahaan pengolahan makanan.
-      </p>
-      <img src="@/assets/produksi2.png" alt="image2" class="produksi-image2" />
+      <div class="content1">
+        <p class="produksi-paragraph2">
+          Setelah telur dihasilkan, telur akan dipanen dengan hati-hati untuk
+          menjaga kualitasnya. Telur kemudian dibersihkan, disortir berdasarkan
+          ukuran dan kualitas, dan kemudian dikemas. Setelah itu, telur siap
+          didistribusikan ke pasar atau konsumen melalui jaringan distribusi
+          yang sudah ada, seperti pengecer atau perusahaan pengolahan makanan.
+        </p>
+        <img
+          src="@/assets/produksi2.png"
+          alt="image2"
+          class="produksi-image2"
+        />
+      </div>
     </div>
   </div>
 </template>
 
 <style>
 .produksi {
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #fbedb6;
 }
 
 .h1p {
@@ -79,72 +84,116 @@ export default {
 }
 
 .content-wrapper {
-  display: flex; /* Default tata letak sejajar horizontal */
+  display: flex;
   align-items: flex-start;
-  gap: 0; /* Hilangkan gap agar terlihat menyatu */
   max-width: 90%;
   margin: 0 auto;
   padding: 0 20px;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.content1 {
+  display: flex;
 }
 
 .produksi-image {
-  width: 300px; /* Default lebar gambar */
-  height: auto; /* Menjaga proporsi gambar */
-  border-top-left-radius: 10px; /* Radius atas kiri */
-  border-bottom-left-radius: 10px; /* Radius bawah kiri */
+  width: 300px;
+  height: 250px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .produksi-image2 {
-  width: 300px; /* Default lebar gambar */
-  height: auto; /* Menjaga proporsi gambar */
+  width: 300px;
+  height: 250px;
+  object-fit: cover;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .produksi-paragraph {
-  flex: 1;
-  font-size: 1rem;
+  flex: none;
+  width: 700px;
+  font-size: larger;
   line-height: 1.5;
-  background-color: #f2c295; /* Warna background */
-  padding: 20px; /* Tambahkan padding untuk teks */
-  border-top-right-radius: 10px; /* Radius atas kanan */
-  border-bottom-right-radius: 10px; /* Radius bawah kanan */
-  margin: 0; /* Hilangkan margin agar menyatu dengan gambar */
-  display: flex; /* Membuat teks memenuhi area */
-  align-items: center; /* Memusatkan teks secara vertikal */
+  background-color: #f2c295;
+  padding: 20px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin: 0;
+  display: flex;
+  align-items: center;
   text-align: justify;
-  height: 180px;
+  height: 250px;
 }
 
 .produksi-paragraph2 {
-  flex: 1;
-  font-size: 1rem;
+  flex: none;
+  width: 700px;
+  font-size: larger;
   line-height: 1.5;
-  background-color: #f2c295; /* Warna background */
-  padding: 20px; /* Tambahkan padding untuk teks */
-  border-top-left-radius: 10px; /* Radius atas kanan */
-  border-bottom-left-radius: 10px; /* Radius bawah kanan */
-  margin: 0; /* Hilangkan margin agar menyatu dengan gambar */
-  display: flex; /* Membuat teks memenuhi area */
-  align-items: center; /* Memusatkan teks secara vertikal */
+  background-color: #f2c295;
+  padding: 20px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin: 0;
+  display: flex;
+  align-items: center;
   text-align: justify;
-  height: 180px;
+  height: 250px;
 }
 
-/* Responsif untuk layar kecil */
 @media (max-width: 768px) {
   .content-wrapper {
-    flex-direction: column; /* Tata letak vertikal */
+    flex-direction: column;
     align-items: center;
-    gap: 15px; /* Jarak antar elemen */
+    gap: 15px;
   }
 
-  .produksi-image {
-    width: 80%; /* Gambar lebih proporsional */
-    border-radius: 10px; /* Radius penuh di layar kecil */
+  .content1 {
+    flex-direction: column;
   }
 
-  .produksi-paragraph {
-    border-radius: 10px; /* Radius penuh di layar kecil */
-    text-align: center; /* Teks rata tengah */
+  .produksi-image,
+  .produksi-image2 {
+    width: 80%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .produksi-paragraph,
+  .produksi-paragraph2 {
+    width: 80%;
+    border-radius: 10px;
+    text-align: center;
+    font-size: medium;
+    padding: 15px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .h1p {
+    font-size: 2rem;
+  }
+
+  .content1 {
+    flex-direction: column;
+  }
+
+  .produksi-image,
+  .produksi-image2 {
+    width: 100%;
+  }
+
+  .produksi-paragraph,
+  .produksi-paragraph2 {
+    width: 100%;
+    font-size: small;
+    padding: 10px;
+    line-height: 1.3;
   }
 }
 
@@ -170,19 +219,16 @@ export default {
   }
 }
 
-/* Initial State */
 .content-wrapper {
   opacity: 0;
-  transform: translateX(0); /* Default transform */
+  transform: translateX(0);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Slide Left */
 .slide-left.animate {
   animation: slideInLeft 0.8s ease-out forwards;
 }
 
-/* Slide Right */
 .slide-right.animate {
   animation: slideInRight 0.8s ease-out forwards;
 }

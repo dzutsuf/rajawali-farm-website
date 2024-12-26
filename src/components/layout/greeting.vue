@@ -29,7 +29,6 @@ export default {
   <div ref="greetingRef" class="introduction">
     <div class="container">
       <div class="text-and-image">
-        <!-- Text Section -->
         <div class="text-section">
           <h1>Selamat Datang di Website Rajawali Farm!</h1>
           <p>
@@ -38,7 +37,6 @@ export default {
             terbaik. Penasaran? Yuk, cek lebih lanjut di website kami!
           </p>
         </div>
-        <!-- Ayam Image Section -->
         <div class="image-section">
           <img class="ayam-image" src="@/assets/Ayam1.png" alt="Ayam Image" />
         </div>
@@ -48,43 +46,49 @@ export default {
 </template>
 
 <style>
-/* --- Introduction Section --- */
 .introduction {
   display: flex;
-  justify-content: center; /* Memastikan konten berada di tengah secara horizontal */
+  justify-content: center;
   align-items: center;
-  width: 100%; /* Pastikan lebar section memenuhi 100% layar */
+  width: 100%;
   height: 100%;
-  background-size: cover; /* Mengisi seluruh tinggi layar */
-  background-color: #ffeda3; /* Memberikan background warna sesuai yang diinginkan */
+  background-color: #ffeda3;
   text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.introduction.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .text-and-image {
-  padding: 0 40px 0;
+  padding: 0 40px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .text-section {
-  padding: 0 40px 0;
+  padding: 0 60px;
   color: black;
 }
 
 .text-section h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 20px;
 }
 
 .text-section p {
   line-height: 1.6;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   margin-bottom: 20px;
 }
 
 .image-section {
-  width: 45%; /* Memastikan gambar tidak terlalu besar */
+  width: 15%;
   text-align: center;
 }
 
@@ -92,39 +96,17 @@ export default {
   height: auto;
   border-radius: 5px;
   transition: transform 0.3s ease-in-out;
+  width: 150px;
 }
 
 .ayam-image:hover {
   transform: scale(1.05);
 }
 
-.h1p {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
-  .background {
-    padding: 15px;
-  }
-
-  .logo {
-    width: 40%;
-  }
-
-  .welcome-text h1 {
-    font-size: 2.5rem;
-  }
-
-  .welcome-text p {
-    font-size: 1.2rem;
-  }
-
-  .cta-button {
-    font-size: 1rem;
-    padding: 10px 30px;
+  .text-and-image {
+    flex-direction: column;
+    text-align: center;
   }
 
   .text-section h1 {
@@ -135,13 +117,8 @@ export default {
     font-size: 1rem;
   }
 
-  .text-and-image {
-    flex-direction: column; /* Stack text and image on smaller screens */
-    text-align: center;
-  }
-
   .image-section {
-    width: 80%;
+    width: 30%;
     margin-top: 20px;
   }
 
@@ -151,31 +128,23 @@ export default {
   }
 }
 
-/* --- Animations --- */
-@keyframes bounceIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
+@media (max-width: 480px) {
+  .text-section h1 {
+    font-size: 1.8rem;
   }
-  60% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 
-/* Initial State */
-.introduction {
-  opacity: 0;
-  transform: scale(0.5);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
+  .text-section p {
+    font-size: 0.9rem;
+  }
 
-/* Animate State */
-.introduction.animate {
-  animation: bounceIn 0.8s ease-out forwards;
+  .image-section {
+    width: 30%;
+    margin-top: 15px;
+  }
+
+  .ayam-image {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 </style>

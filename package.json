@@ -12,6 +12,7 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "canvas-confetti": "^1.9.3",
     "font-awesome": "^4.7.0",
     "pinia": "^2.2.6",
     "vue": "^3.5.12",

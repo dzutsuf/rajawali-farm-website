@@ -1,4 +1,16 @@
-<script setup></script>
+<script setup>
+const goToTentangKami = () => {
+  const mainElement = document.querySelector("main");
+  if (mainElement) {
+    mainElement.classList.remove("disable-scroll");
+  }
+
+  const tentangKamiSection = document.querySelector("#greet");
+  if (tentangKamiSection) {
+    tentangKamiSection.scrollIntoView({ behavior: "smooth" });
+  }
+};
+</script>
 
 <template>
   <div class="welcome-text">
@@ -10,14 +22,14 @@
     <h1 class="animate-text">RAJAWALI FARM</h1>
     <p class="animate-text">Rajanya Telur dan Ayam</p>
     <div class="button1 animate-buttons">
-      <a href="#explore" class="cta-button">Tentang Kami</a>
-      <a href="#explore" class="cta-button">Blog</a>
+      <a href="javascript:void(0)" class="cta-button" @click="goToTentangKami">
+        Tentang Kami
+      </a>
     </div>
   </div>
 </template>
 
-<style>
-/* Keyframes for Animations */
+<style scoped>
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -38,7 +50,6 @@
   }
 }
 
-/* Animations for Elements */
 .animate-logo {
   animation: fadeIn 1.5s ease-in-out;
 }
@@ -55,7 +66,6 @@
   animation-fill-mode: both;
 }
 
-/* Logo Styling */
 .logo {
   width: 50%;
   height: auto;
@@ -65,7 +75,6 @@
   margin-right: auto;
 }
 
-/* Welcome Text Section */
 .welcome-text {
   margin-top: 7vh;
   padding: 0 20px;
@@ -95,7 +104,6 @@
   flex-wrap: wrap;
 }
 
-/* CTA Button Styling */
 .cta-button {
   background-color: transparent;
   padding: 14px 40px;
@@ -111,14 +119,19 @@
   background-color: #e64a19;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .logo {
-    width: 70%;
+    width: 25%;
+  }
+
+  .welcome-text {
+    margin-top: 20vh;
+    justify-content: center;
+    text-align: center;
   }
 
   .welcome-text h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .welcome-text p {
@@ -127,17 +140,23 @@
 
   .cta-button {
     font-size: 1rem;
-    padding: 10px 30px;
+    padding: 12px 30px;
   }
 }
 
 @media (max-width: 480px) {
   .logo {
-    width: 90%;
+    width: 25%;
+  }
+
+  .welcome-text {
+    margin-top: 30vh;
+    justify-content: center;
+    text-align: center;
   }
 
   .welcome-text h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .welcome-text p {
@@ -146,7 +165,7 @@
 
   .cta-button {
     font-size: 0.9rem;
-    padding: 8px 20px;
+    padding: 10px 20px;
   }
 }
 </style>

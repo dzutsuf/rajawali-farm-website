@@ -5,41 +5,40 @@ export default {
       reasons: [
         {
           image: new URL("@/assets/kualitas.png", import.meta.url).href,
-          title: "Kualitas Terbaik",
+          title: "Kualitas Premium",
           description:
-            "Produk ayam dan telur kami diproduksi dengan standar tinggi untuk memastikan kesegaran dan rasa terbaik.",
+            "Menghasilkan telur omega dengan kualitas nutrisi lebih tinggi berkat pakan ayam yang mengandung nutrisi tambahan seperti premix, memastikan kandungan gizi optimal untuk kesehatan konsumen.",
         },
         {
-          image: new URL("@/assets/tangan.png", import.meta.url).href,
-          title: "Tangan Ahli",
+          image: new URL("@/assets/KetahanProduk.png", import.meta.url).href,
+          title: "Ketahanan Produk",
           description:
-            "Dikelola oleh tim dengan pengalaman dan keahlian dalam memelihara serta memproduksi hasil ternak berkualitas.",
+            "Telur dari Rajawali Farm memiliki daya tahan hingga 1 bulan, berkat lisensi test laboratorium yang dimiliki oleh produk kami.",
         },
         {
           image: new URL("@/assets/harga.png", import.meta.url).href,
           title: "Harga Kompetitif",
           description:
-            "Produk berkualitas dengan harga yang tetap terjangkau untuk konsumen.",
+            "Kami memastikan harga telur tetap sesuai dengan standar yang ditetapkan oleh Dinas Perdagangan, menjaga stabilitas pasar dan menghindari monopoli.",
         },
         {
           image: new URL("@/assets/pengiriman.png", import.meta.url).href,
-          title: "Pengiriman Aman",
+          title: "Berkelanjutan",
           description:
-            "Produk diantar dengan cepat menggunakan pengemasan yang menjaga kualitas dan kesegaran.",
+            "Dengan populasi ayam mencapai 26.000 ekor, kami mampu memproduksi telur secara konsisten dalam jumlah besar setiap hari.",
         },
         {
-          image: new URL("@/assets/transparansi.png", import.meta.url).href,
-          title: "Transparansi Proses",
+          image: new URL("@/assets/Distribusi.png", import.meta.url).href,
+          title: "Distribusi Luas",
           description:
-            "Kami terbuka mengenai cara produk dihasilkan, sehingga Anda tahu bahwa Anda mendapatkan yang terbaik.",
+            "Produk kami telah tersebar ke beberapa kota besar di Jawa Barat dan DKI Jakarta, menjamin jangkauan distribusi yang luas dan pelayanan yang efisien.",
         },
       ],
-      activeIndex: null, // Menyimpan indeks elemen yang aktif
+      activeIndex: null,
     };
   },
   methods: {
     toggleContent(index) {
-      // Menampilkan atau menyembunyikan konten berdasarkan klik
       this.activeIndex = this.activeIndex === index ? null : index;
     },
   },
@@ -68,6 +67,7 @@ export default {
 
 <style>
 .h1p {
+  padding-top: 50px;
   font-size: 2.5rem;
   margin-bottom: 20px;
   text-align: center;
