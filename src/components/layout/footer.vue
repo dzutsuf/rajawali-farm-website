@@ -36,6 +36,8 @@ export default {
             <a
               href="https://www.instagram.com/rajawalifarm/"
               class="instagram-icon"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <i class="fab fa-instagram"></i>
             </a>
@@ -56,8 +58,14 @@ export default {
       <div class="nophone">
         <div class="icon2"><i class="fa fa-map-marker"></i></div>
         <h1 class="number">
-          Kelinci road, Raharja, Kec. Tanjungsari, Kabupaten Sumedang, Jawa
-          Barat 45362
+          <a
+            href="https://maps.app.goo.gl/VYcE6Wzz6Ej7yRvF9"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Kelinci road, Raharja, Kec. Tanjungsari, Kabupaten Sumedang, Jawa
+            Barat 45362
+          </a>
         </h1>
       </div>
     </div>
