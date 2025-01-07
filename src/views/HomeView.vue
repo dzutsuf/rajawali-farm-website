@@ -1,4 +1,5 @@
 <script setup>
+import FlyingButton from "../components/atom/FlyingButton.vue";
 import Welcome from "../components/layout/welcome.vue";
 import Greet from "../components/layout/greeting.vue";
 import Tentang from "../components/layout/tentangKami.vue";
@@ -12,17 +13,14 @@ import Mitra from "@/components/layout/mitra.vue";
 
 <template>
   <main class="disable-scroll">
-    <!-- Section Welcome -->
     <div class="background">
       <Welcome />
     </div>
 
-    <!-- Section Greeting -->
-    <divdiv id="greet" class="tentang">
+    <div id="greet" class="tentang">
       <Greet />
-    </divdiv>
+    </div>
 
-    <!-- Section Tentang Kami -->
     <div id="tentangKami" class="tentang">
       <Tentang />
     </div>
@@ -31,12 +29,10 @@ import Mitra from "@/components/layout/mitra.vue";
       <DataP />
     </div>
 
-    <!-- Section Production -->
     <div>
       <Production />
     </div>
 
-    <!-- Section Reason -->
     <div>
       <Reason />
     </div>
@@ -49,21 +45,20 @@ import Mitra from "@/components/layout/mitra.vue";
       <Mitra />
     </div>
 
-    <!-- Section Footer -->
     <div>
       <End />
     </div>
+
+    <FlyingButton />
   </main>
 </template>
 
 <style scoped>
-/* Nonaktifkan scroll */
 .disable-scroll {
-  overflow: hidden; /* Hilangkan scroll */
-  height: 100vh; /* Batasi konten dalam satu layar */
+  overflow: hidden;
+  height: 100vh;
 }
 
-/* Styling untuk latar belakang */
 .background {
   background-image: url("@/assets/bghomepage.png");
   background-size: cover;

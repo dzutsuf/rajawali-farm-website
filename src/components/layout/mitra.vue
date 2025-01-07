@@ -31,7 +31,7 @@ export default {
         },
         {
           color: "#008000",
-          text: "Pedagang telur grosir yang memasok ke supermarket, pasar tradisional, dan toko makanan sehat.",
+          text: "<b>Pedagang telur grosir yang memasok ke supermarket, pasar tradisional, dan toko makanan sehat.</b>",
         },
       ],
     };
@@ -83,6 +83,7 @@ export default {
   height: 20px;
   border-radius: 50%;
   margin-right: 1rem;
+  flex-shrink: 0; /* Mencegah ikon mengecil secara tidak proporsional */
 }
 .text {
   font-size: 1.5rem;

@@ -1,7 +1,20 @@
 <script>
 import "font-awesome/css/font-awesome.min.css";
+import Swal from "sweetalert2";
 
 export default {
+  data() {
+    return {
+      name: "",
+      email: "",
+      message: "",
+      errors: {
+        name: "",
+        email: "",
+        message: "",
+      },
+    };
+  },
   mounted() {
     const footer = document.querySelector(".footer");
     const observer = new IntersectionObserver(
@@ -13,6 +26,41 @@ export default {
       { threshold: 0.1 }
     );
     observer.observe(footer);
+  },
+  methods: {
+    validateForm() {
+      this.errors = { name: "", email: "", message: "" };
+      let valid = true;
+
+      if (!this.name.trim()) {
+        this.errors.name = "Name is required.";
+        valid = false;
+      }
+      if (!this.email.trim() || !/^\S+@\S+\.\S+$/.test(this.email)) {
+        this.errors.email = "Valid email is required.";
+        valid = false;
+      }
+      if (!this.message.trim()) {
+        this.errors.message = "Message is required.";
+        valid = false;
+      }
+
+      if (valid) {
+        this.sendMessage();
+      }
+    },
+    sendMessage() {
+      Swal.fire({
+        title: "Message Sent!",
+        text: `Your message has been sent successfully.\n\nName: ${this.name}\nEmail: ${this.email}\nMessage: ${this.message}`,
+        icon: "success",
+        confirmButtonText: "OK",
+      });
+
+      this.name = "";
+      this.email = "";
+      this.message = "";
+    },
   },
 };
 </script>
@@ -89,6 +137,11 @@ export default {
   margin: 20px;
 }
 
+.dh2 {
+  color: white;
+  font-size: xx-large;
+}
+
 .imgh1 {
   display: flex;
   gap: 10px;
@@ -123,12 +176,6 @@ export default {
 
 .instagram-icon:hover {
   color: #d84b4b;
-}
-
-.dh2 {
-  margin-top: 7px;
-  font-size: 4vh;
-  color: white;
 }
 
 .nophone {
@@ -175,7 +222,6 @@ export default {
   }
 }
 
-/* Animasi muncul dari bawah */
 .animate-footer {
   opacity: 1;
   transform: translateY(0);
